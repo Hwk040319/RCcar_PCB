@@ -1,0 +1,41 @@
+--- a/firmware/v4/vehicle_mega/vehicle_mega.ino
++++ b/firmware/v4/vehicle_mega/vehicle_mega.ino
+@@ -4,7 +4,7 @@
+ #include <Wire.h>
+ #include <RF24.h>
+ #include <VL53L0X.h>
+-const byte ENA = 5, IN1 = 22, IN2 = 23, IN3 = 24, IN4 = 25, ENB = 6;
++const byte ENA = 5, IN1 = 2, IN2 = 3, IN3 = 4, IN4 = 9, ENB = 6;
+ const bool LEFT_INVERT = false;  // Match the result of now_01_motor_mega.
+ const bool RIGHT_INVERT = false; // Change to true if right wheel runs backward.
+ const byte MAX_PWM = 200; // Replace with the value confirmed in v0 on your hardware.
+@@ -57,7 +57,7 @@
+   pinMode(IN1, OUTPUT); pinMode(IN2, OUTPUT);
+   pinMode(IN3, OUTPUT); pinMode(IN4, OUTPUT);
+   drive(0, 0);
+-  pinMode(13, OUTPUT);
++  pinMode(A0, OUTPUT);
+   Serial.begin(115200);
+   Wire.begin(); // Mega SDA=D20, SCL=D21.
+   sensor.setTimeout(100);
+@@ -68,9 +68,9 @@
+   } else {
+     Serial.println(F("VL53L0X missing: forward blocked, reverse allowed"));
+   }
+-  pinMode(53, OUTPUT); digitalWrite(53, HIGH);
++  pinMode(10, OUTPUT); digitalWrite(10, HIGH);
+   if (!radio.begin()) {
+-    while (true) { drive(0, 0); digitalWrite(13, HIGH); delay(100); digitalWrite(13, LOW); delay(100); }
++    while (true) { drive(0, 0); digitalWrite(A0, HIGH); delay(100); digitalWrite(A0, LOW); delay(100); }
+   }
+   radio.setChannel(76);
+   radio.setDataRate(RF24_250KBPS);
+@@ -103,7 +103,7 @@
+   if (millis() - lastDriveMs < 20) return;
+   lastDriveMs = millis();
+   bool fresh = linked && millis() - lastPacketMs < RADIO_TIMEOUT_MS;
+-  digitalWrite(13, fresh ? HIGH : LOW);
++  digitalWrite(A0, fresh ? HIGH : LOW);
+   if (!fresh) { drive(0, 0); return; }
+ 
+   // Positive turn means left: slow/reverse left, speed up right.
