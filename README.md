@@ -20,9 +20,12 @@ RC카 차량 보드 통합 설계 기록. 미제연 11월 미니프로젝트 PCB
 |---|---|
 | [`docs/spec-v0.3.md`](docs/spec-v0.3.md) | 통합 설계 사양서 (전원 트리, 핀맵, BOM, 선폭·전류 제한 계산, 확인 필요 항목) |
 | [`docs/decision-log.md`](docs/decision-log.md) | 설계 결정과 근거, 정정 이력, 남은 작업 |
+| [`docs/deck-outline.md`](docs/deck-outline.md) | 특강 슬라이드(486장) 제목 목차 |
 | [`sim/`](sim/) | 전류 제한 회로 ngspice 간이 시뮬레이션 |
 | [`firmware/`](firmware/) | Mega → ATmega328P 스케치 수정 패치 (5줄) |
 | [`tools/build_328p.sh`](tools/build_328p.sh) | avr-gcc로 328P 컴파일을 확인한 스크립트 |
+
+특강 덱(`PCB설계특강_RC카.pptx`, 9.6MB)은 통합 보드 기준으로 개편을 마쳤지만, 파일 자체는 아직 이 저장소에 없다. 지금은 목차만 올라와 있다.
 
 ## 검증 수준 (읽을 때 주의)
 
@@ -48,6 +51,6 @@ Claude와 작업하는 세션에서 내용이 바뀔 때마다 변경된 파일�
 
 ## 남은 작업
 
-- 특강 슬라이드 개편 (목표별 설계 방향, stall 설명, 모듈 유지 vs 통합 비교, 전원 트리 · 핀맵 · 실습 4단계)
+- 특강 덱 pptx 파일 업로드 (저장소 쓰기 권한 문제로 보류)
 - KiCad 프로젝트 파일 (회로도, 보드)
 - 모터 권선 저항 실측 후 설계 기준 갱신
