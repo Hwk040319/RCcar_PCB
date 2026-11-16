@@ -2,7 +2,7 @@
 
 RC카 차량 보드 통합 설계 기록. 미제연 11월 미니프로젝트 PCB 특강에서 쓸 **모델 보드**(정답 예시)를 설계하는 저장소다.
 
-**상태: 초안.** 사양서 v0.3까지 작성했고, 실물 제작·동작 검증은 하지 않았다.
+**상태: 초안.** 사양서 v0.4까지 작성했고(2026-11-16 부품 확인 반영), 실물 제작·동작 검증은 하지 않았다.
 
 ## 무엇을 설계하나
 
@@ -18,14 +18,18 @@ RC카 차량 보드 통합 설계 기록. 미제연 11월 미니프로젝트 PCB
 
 | 경로 | 내용 |
 |---|---|
-| [`docs/spec-v0.3.md`](docs/spec-v0.3.md) | 통합 설계 사양서 (전원 트리, 핀맵, BOM, 선폭·전류 제한 계산, 확인 필요 항목) |
+| [`docs/spec-v0.4.md`](docs/spec-v0.4.md) | **현재 기준.** 통합 설계 사양서 (전원 트리, 핀맵, BOM, 선폭·전류 제한 계산, 확인 필요 항목). v0.3 대비 변경 요약이 맨 앞에 있다 |
+| [`docs/parts-confirmed.md`](docs/parts-confirmed.md) | 부품 확정표: EasyEDA 검색용 LCSC 번호, 학생이 틀리기 쉬운 지점, 이번에 해소한 ⚠ |
+| [`docs/handson-checklist.md`](docs/handson-checklist.md) | 강사가 EasyEDA로 정답 보드를 직접 만들 때 쓰는 촬영 · 확인표 (덱 실습 1~17 구간 기준) |
+| [`docs/lecture-notice-draft.md`](docs/lecture-notice-draft.md) | 사전 공지문 초안 (날짜 · 장소 · EasyEDA 버전은 빈칸) |
+| [`docs/spec-v0.3.md`](docs/spec-v0.3.md) | 이전 버전 (이력용) |
 | [`docs/decision-log.md`](docs/decision-log.md) | 설계 결정과 근거, 정정 이력, 남은 작업 |
 | [`docs/deck-outline.md`](docs/deck-outline.md) | 특강 슬라이드(486장) 제목 목차 |
 | [`sim/`](sim/) | 전류 제한 회로 ngspice 간이 시뮬레이션 |
 | [`firmware/`](firmware/) | Mega → ATmega328P 스케치 수정 패치 (5줄) |
 | [`tools/build_328p.sh`](tools/build_328p.sh) | avr-gcc로 328P 컴파일을 확인한 스크립트 |
 
-특강 덱(`PCB설계특강_RC카.pptx`, 9.6MB)은 통합 보드 기준으로 개편을 마쳤지만, 파일 자체는 아직 이 저장소에 없다. 지금은 목차만 올라와 있다.
+특강 덱은 [`slides/`](slides/)에 있다 (486장, 9.6MB, 파일명에 공백이 있다). 실습 스크린샷 슬라이드는 강사가 EasyEDA를 직접 돌린 뒤에 채운다. 어느 버전인지는 [`slides/README.md`](slides/README.md) 참고.
 
 ## 검증 수준 (읽을 때 주의)
 
@@ -36,6 +40,7 @@ RC카 차량 보드 통합 설계 기록. 미제연 11월 미니프로젝트 PCB
 | 모터 stall 5.5A | **가정** (같은 급 Pololu 37D 값). 실제 모터는 권선 저항 실측 필요 |
 | 데이터시트 수치 | 웹에서 찾은 사본 기준. 제조사 원본과 대조 필요 |
 | 핀 번호 | EasyEDA / KiCad 심볼과 대조 전 |
+| 부품 LCSC 번호 | 11개는 부품 페이지에서 재확인(✔), 나머지 소형 부품 7개는 EasyEDA에서 눈으로 확인 필요(△). [`parts-confirmed.md`](docs/parts-confirmed.md) |
 | 모터 · 무선 · 거리센서 실제 동작 | 확인 못 함 |
 
 사양서에서 ⚠ 표시는 직접 확인하지 못한 값이나 가정이다. 확정은 사양서 11장의 열린 항목이 해소된 뒤에 한다.
@@ -51,6 +56,7 @@ Claude와 작업하는 세션에서 내용이 바뀔 때마다 변경된 파일�
 
 ## 남은 작업
 
-- 특강 덱 pptx 파일 업로드 (저장소 쓰기 권한 문제로 보류)
-- KiCad 프로젝트 파일 (회로도, 보드)
+- 강사가 EasyEDA로 정답 보드를 직접 설계 → 핀 번호 대조 · 스크린샷 촬영 ([`handson-checklist.md`](docs/handson-checklist.md)) → 덱 실습 1~17 구간 채우기
 - 모터 권선 저항 실측 후 설계 기준 갱신
+- 사전 공지문의 날짜 · 장소 · EasyEDA 버전 채우기
+- KiCad 프로젝트 파일 (회로도, 보드) — 미착수
