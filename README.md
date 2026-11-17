@@ -19,6 +19,7 @@ RC카 차량 보드 통합 설계 기록. 미제연 11월 미니프로젝트 PCB
 | 경로 | 내용 |
 |---|---|
 | [`docs/spec-v0.4.md`](docs/spec-v0.4.md) | **현재 기준.** 통합 설계 사양서 (전원 트리, 핀맵, BOM, 선폭·전류 제한 계산, 확인 필요 항목). v0.3 대비 변경 요약이 맨 앞에 있다 |
+| [`docs/netlist-v0.4.md`](docs/netlist-v0.4.md) | **EasyEDA에서 따라 그리는 연결표.** 사양서를 부품 · 핀별로 모은 것 (새 결정 없음). 사양서가 정하지 않은 칸은 맨 아래 7절 |
 | [`docs/parts-confirmed.md`](docs/parts-confirmed.md) | 부품 확정표: EasyEDA 검색용 LCSC 번호, 학생이 틀리기 쉬운 지점, 이번에 해소한 ⚠ |
 | [`docs/handson-checklist.md`](docs/handson-checklist.md) | 강사가 EasyEDA로 정답 보드를 직접 만들 때 쓰는 촬영 · 확인표 (덱 실습 1~17 구간 기준) |
 | [`docs/lecture-notice-draft.md`](docs/lecture-notice-draft.md) | 사전 공지문 초안 (날짜 · 장소 · EasyEDA 버전은 빈칸) |
