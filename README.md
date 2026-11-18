@@ -22,6 +22,7 @@ RC카 차량 보드 통합 설계 기록. 미제연 11월 미니프로젝트 PCB
 | [`docs/netlist-v0.4.md`](docs/netlist-v0.4.md) | **EasyEDA에서 따라 그리는 연결표.** 사양서를 부품 · 핀별로 모은 것 (새 결정 없음). 사양서가 정하지 않은 칸은 맨 아래 7절 |
 | [`docs/parts-confirmed.md`](docs/parts-confirmed.md) | 부품 확정표: EasyEDA 검색용 LCSC 번호, 학생이 틀리기 쉬운 지점, 이번에 해소한 ⚠ |
 | [`docs/handson-checklist.md`](docs/handson-checklist.md) | 강사가 EasyEDA로 정답 보드를 직접 만들 때 쓰는 촬영 · 확인표 (덱 실습 1~17 구간 기준) |
+| [`docs/handoff-lecture.md`](docs/handoff-lecture.md) | **동료 강사 인수인계 (11-18).** 최종 PPT(181장, `PCB설계_RC카_CODEPLANT_v0.5.pptx`)에 남긴 빈칸 · EasyEDA와 실물에서 확인할 것 · 강의에서 말로 밝힐 것 |
 | [`docs/lecture-notice-draft.md`](docs/lecture-notice-draft.md) | 사전 공지문 초안 (날짜 · 장소 · EasyEDA 버전은 빈칸) |
 | [`docs/spec-v0.3.md`](docs/spec-v0.3.md) | 이전 버전 (이력용) |
 | [`docs/decision-log.md`](docs/decision-log.md) | 설계 결정과 근거, 정정 이력, 남은 작업 |
